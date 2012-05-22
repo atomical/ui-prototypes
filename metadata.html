@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>R0 Ingest Workflow (static prototype)</title>
+    <link rel="stylesheet" href="styles/bootstrap.css" type="text/css"  />
+  </head>
+
+  <body>
+    <h1>Metadata entry</h1>
+    <p>
+      To speed up the process of data entry you can provide a preformatted CSV or text
+      file. See the help documentation for <a href="#">several examples</a>. 
+    </p>
+    <hr />
+    <p>
+      I have already prepared the metadata that goes with this resource.
+      <form action="metadata-upload.html" method="POST" id="metadata-upload-form">
+        <input type="file" value="Upload metadata" name="metadata"></input>
+        <input type="submit" value="Validate metadata"></input>
+      </form>
+    </p>
+    <p>
+      I need to manually enter the information associated with this resource.
+      <a href="metadata-entry.html">Continue to the metadata form</a>
+    </p>
+          
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="scripts/bootstrap-transition.js"></script>
+    <script src="scripts/bootstrap-alert.js"></script>
+    <script src="scripts/bootstrap-modal.js"></script>
+    <script src="scripts/bootstrap-dropdown.js"></script>
+    <script src="scripts/bootstrap-scrollspy.js"></script>
+    <script src="scripts/bootstrap-tab.js"></script>
+    <script src="scripts/bootstrap-tooltip.js"></script>
+    <script src="scripts/bootstrap-popover.js"></script>
+    <script src="scripts/bootstrap-button.js"></script>
+    <script src="scripts/bootstrap-collapse.js"></script>
+    <script src="scripts/bootstrap-typeahead.js"></script>
+  </body>
+</html>

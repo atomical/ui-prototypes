@@ -1,0 +1,79 @@
+<!-- 
+  This iteration is a basic Javascript free file upload form that uses server
+  side validation to make sure that the single file which was uploaded is a 
+  video, audio, or unknown item.
+  
+  For more information see the workflow documentation.
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>R0 Ingest Workflow (static prototype)</title>
+    <link rel="stylesheet" href="styles/bootstrap.css" type="text/css"  />
+    <link rel="stylesheet" href="styles/custom.css" type="text/css"  />
+  </head>
+  
+  <body class="container">
+    <div class="row offset1 span8">
+      <div class="wizard span10">
+        <ul class="span10">
+          <li class="previous span2">Upload file(s)</li>
+          <li class="current span2">Basic metadata</li>
+          <li class="span2">Additional metadata</li>
+          <li class="span2">Preview resource</li>
+        </ul>
+      </div>
+      
+      <div id="notice" class="alert span8">
+        <a class="close" data-dismiss="alert" href="#">×</a>
+        <h3 class="alert-heading">Video format detected</h4>
+        <p>Based on the format of the file you uploaded it looks like you want to
+        work with video content. <a href="basic-choose-format.html">Choose a different format</a>.</p>
+        <p><a href="resources/cake.mp4" id="file_upload_link" class="download-link" target="new">demo-video.mp4</a> (41.7 MB)</p>
+      </div>
+      
+      <form action="basic-video-metadata-error.html" method="POST" name="basic_resource_description" class="span8">
+          <fieldset id="metadata_fields">
+            <legend>
+              Basic metadata
+            </legend>
+              <p class="help-block">* All fields are required.</p>
+            
+              <label for="title">Title</label>
+              <input type="text" name="title" class="span4"></input>
+
+              <label for="creator">Creator</label>
+              <input type="text" name="creator" class="span4"></input>
+
+              <label for="summary">Summary</label>
+              <textarea rows="10" name="summary" class="span4"></textarea>
+          </fieldset>
+          
+          <fieldset id="controls">        
+            <input type="submit" value="Continue to next step" class="btn"></input>
+            <a href="basic-video-upload.html" class="btn btn-danger">Cancel</a>
+          </fieldset>     
+      </form>
+   </div>
+   <div class="row span3" id="buffer">
+     <!-- Push the content away from the right margin -->
+   </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="scripts/bootstrap-transition.js"></script>
+    <script src="scripts/bootstrap-alert.js"></script>
+    <script src="scripts/bootstrap-modal.js"></script>
+    <script src="scripts/bootstrap-dropdown.js"></script>
+    <script src="scripts/bootstrap-tab.js"></script>
+    <script src="scripts/bootstrap-tooltip.js"></script>
+    <script src="scripts/bootstrap-popover.js"></script>
+    <script src="scripts/bootstrap-button.js"></script>
+    <script src="scripts/bootstrap-typeahead.js"></script>
+    
+  </body>
+</html>

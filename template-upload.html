@@ -1,0 +1,91 @@
+<!-- This is a template for the file upload process that depends on Javascript to
+  add additional fields. If this is possible the next progressive enhancement is to
+  use jQuery to convert the input into a drag and drop field that automatically
+  begins the upload process. 
+  
+  Check with Phuong at some point to get an idea of just how complex this might
+  be to implement
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>R0 Ingest Workflow (static prototype)</title>
+    <link rel="stylesheet" href="styles/bootstrap.css" type="text/css"  />
+    <style>
+      .breadcrumb li:after {
+        content: ' /';
+      }
+      
+      .breadcrumb li:after:last-child {
+        content: '';
+      }
+      
+      .breadcrumb li.current {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  
+  <body class="container">
+    <div class="row offset1 span8">
+      <div class="wizard-progress">
+        <ul class="breadcrumb">
+          <li class="current"
+          >Upload file(s)</li>
+          <li>Basic metadata</li>
+          <li>Additional metadata</li>
+          <li>Preview resource</li>
+        </ul>
+      </div>
+      
+      <h1>Upload files</h1>
+      <hr />
+      <p>Select the file(s) that you want to being associated with this resource. The system will attempt to determine whether it is audio or video. <strong>Recommended formats include <em>MP4</em>, <em>MPEG</em>, or <em>AVI</em> for video and <em>MP3</em>, <em>WAV</em>, or <em>AIFF</em> for audio.</strong></p>
+        <form action="basic-video-metadata.html" method="POST" name="file_upload_form" class="form-vertical">
+          <fieldset id="file_container">
+            <div class="control-group" id="file_field_0">
+              <input type="file" name="file_upload[]"></input>
+            </div>
+          </fieldset>
+          <div class="control-group">
+            <a href="#" class="add_files">Add more files</a>
+          </div>
+          <div class="control-group">
+            <input type="submit" value="Continue to next step"></input>
+          </div>     
+      </form>
+   </div>
+   <div class="row span3" id="buffer">
+     <!-- Push the content away from the right margin -->
+   </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="scripts/bootstrap-transition.js"></script>
+    <script src="scripts/bootstrap-alert.js"></script>
+    <script src="scripts/bootstrap-modal.js"></script>
+    <script src="scripts/bootstrap-dropdown.js"></script>
+    <script src="scripts/bootstrap-tab.js"></script>
+    <script src="scripts/bootstrap-tooltip.js"></script>
+    <script src="scripts/bootstrap-popover.js"></script>
+    <script src="scripts/bootstrap-button.js"></script>
+    <script src="scripts/bootstrap-typeahead.js"></script>
+    
+    <script>
+      file_counter = 0;
+      function cloneFileField() {
+        file_counter++;
+        element_id = "file_upload_" + file_counter;
+        $('#file_field_0').clone().attr('id', element_id).appendTo('#file_container');
+      }
+      
+      $(function() {
+        $(".add_files").click(function() { cloneFileField(); });
+      });
+    </script>
+  </body>
+</html>

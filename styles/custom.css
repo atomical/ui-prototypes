@@ -1,0 +1,29 @@
+.wizard {
+  font-size: 105%;
+}
+
+.wizard ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.wizard li {
+  background: rgb(225, 225, 225);
+  padding: 5px 15px;
+  margin-left: 0;
+  
+  border: 1px rgb(24, 24, 24) solid;
+  border-radius: 5px;
+}
+
+.wizard li.current {
+  color: rgb(255, 255, 255);
+  background: rgb(96, 96, 96);
+}
+
+.wizard li.previous {
+  color: rgb(255, 255, 255);
+  background: rgb(0, 0, 0);
+}
+
