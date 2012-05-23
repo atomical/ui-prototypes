@@ -1,3 +1,28 @@
+/**
+ * General styles come first
+ */
+header {
+  background: rgb(224, 224, 224);
+  border-bottom: 2px rgb(128, 128, 128) solid;
+  padding: 9px 0;
+}
+
+#authentication {
+  text-align: right;
+  margin: 18px 0;
+}
+
+#left_column, 
+#right_column {
+}
+
+.logo img {
+  background: rgb(255, 255, 255);
+  border: 1px rgb(0, 0, 0) solid;
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+}
+
 .wizard {
   font-size: 105%;
 }
