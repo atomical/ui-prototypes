@@ -1,11 +1,3 @@
-<!-- This is a template for the file upload process that depends on Javascript to
-  add additional fields. If this is possible the next progressive enhancement is to
-  use jQuery to convert the input into a drag and drop field that automatically
-  begins the upload process. 
-  
-  Check with Phuong at some point to get an idea of just how complex this might
-  be to implement
--->
 <!DOCTYPE html>
 
 <html lang="en">
@@ -13,54 +5,67 @@
     <meta charset="utf-8" />
     <title>R0 Ingest Workflow (static prototype)</title>
     <link rel="stylesheet" href="styles/bootstrap.css" type="text/css"  />
-    <style>
-      .breadcrumb li:after {
-        content: ' /';
-      }
-      
-      .breadcrumb li:after:last-child {
-        content: '';
-      }
-      
-      .breadcrumb li.current {
-        font-weight: bold;
-      }
-    </style>
+    <link rel="stylesheet" href="styles/custom.css" type="text/css" />
   </head>
   
-  <body class="container">
-    <div class="row offset1 span8">
-      <div class="wizard-progress">
-        <ul class="breadcrumb">
-          <li class="current"
-          >Upload file(s)</li>
-          <li>Basic metadata</li>
-          <li>Additional metadata</li>
-          <li>Preview resource</li>
-        </ul>
+  <body>
+    <div class="container">
+    <header class="row span12">
+      <div class="logo span2">
+        <img src="images/placeholder-logo.png" alt="[Future home of the VoV logo]" />
+      </div>
+      <div class="banner offset1 span6">
+        <h1>Variations on Video prototype</h1>
+      </div>
+    </header>
+    
+      <div class="row" id="authentication">
+        <div class="offset3 span8">
+          Welcome <span class="username">archivist1</span> |
+          <a href="index-guest.html">log out</a>
+        </div>
       </div>
       
-      <h1>Upload files</h1>
-      <hr />
-      <p>Select the file(s) that you want to being associated with this resource. The system will attempt to determine whether it is audio or video. <strong>Recommended formats include <em>MP4</em>, <em>MPEG</em>, or <em>AVI</em> for video and <em>MP3</em>, <em>WAV</em>, or <em>AIFF</em> for audio.</strong></p>
-        <form action="basic-video-metadata.html" method="POST" name="file_upload_form" class="form-vertical">
-          <fieldset id="file_container">
-            <div class="control-group" id="file_field_0">
-              <input type="file" name="file_upload[]"></input>
-            </div>
-          </fieldset>
-          <div class="control-group">
-            <a href="#" class="add_files">Add more files</a>
-          </div>
-          <div class="control-group">
-            <input type="submit" value="Continue to next step"></input>
-          </div>     
-      </form>
-   </div>
-   <div class="row span3" id="buffer">
-     <!-- Push the content away from the right margin -->
-   </div>
+      <div class="row">
+        <form action="index-authorized.html" method="POST" id="search_form" class="form-search offset1 span9">
+          <input type="text" name="keywords" class="span6" />
+          <button type="submit" class="btn">search</button>
+        </form>
+      </div>
+      
+      <div class="row">
+        <div id="left_column" class="offset1 span5">
+          <h2>My resources</h2>
+          <hr />
+          <ul class="unstyled">
+            <li><a href="basic-video-preview.html">Sample video [hydra-demo:10]</a></li>
+            <li><a href="basic-audio-preview.html">Opera performance [hydra-demo:24]</a></li>
+            <li><a href="basic-video-preview.html">Nutcracker ballet [hydra-demo:31]</a></li>
+            <li><a href="basic-audio-preview.html">Recorded lecture [hydra-demo:14]</a></li> 
+          </ul>
 
+          <h2><a href="basic-video-upload.html">Add a new resource</a></h2>
+          <hr />
+          <p>To add additional resources manually use the <a href="basic-audio-upload.html">basic form</a>. For a complete list of supported formats <a href="#">consult the help documentation.</a></p>
+          <p>If you need to upload multiple resources at once <a href="#">open a ticket</a> with an administrator.</p>
+        </div>
+        
+        <div id="right_column" class="offset1 span3">
+          <h2>Recent activity</h2>
+          <hr />
+          <ul class="unstyled">
+            <li><a href="basic-video-preview.html">Video object [hydra-demo:1]</a></li>
+            <li><a href="basic-audio-preview.html">Audio object [hydra-demo:2]</a></li>
+            <li><a href="basic-video-preview.html">Video object [hydra-demo:3]</a></li>
+            <li><a href="basic-audio-preview.html">Audio object [hydra-demo:4]</a></li>            
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <footer>
+    </footer>
+    
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -74,18 +79,5 @@
     <script src="scripts/bootstrap-popover.js"></script>
     <script src="scripts/bootstrap-button.js"></script>
     <script src="scripts/bootstrap-typeahead.js"></script>
-    
-    <script>
-      file_counter = 0;
-      function cloneFileField() {
-        file_counter++;
-        element_id = "file_upload_" + file_counter;
-        $('#file_field_0').clone().attr('id', element_id).appendTo('#file_container');
-      }
-      
-      $(function() {
-        $(".add_files").click(function() { cloneFileField(); });
-      });
-    </script>
   </body>
 </html>

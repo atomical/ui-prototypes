@@ -11,7 +11,7 @@
   <body>
     <div class="container">
     <header class="row span12">
-      <div class="logo span1">
+      <div class="logo span2">
         <img src="images/placeholder-logo.png" alt="[Future home of the VoV logo]" />
       </div>
       <div class="banner offset1 span6">
@@ -19,43 +19,49 @@
       </div>
     </header>
     
-    <div class="container">
       <div class="row" id="authentication">
-        <div class="offset4 span6">
+        <div class="offset3 span8">
           Welcome <span class="username">guest</span> |
-          <a href="#">log in</a>
+          <a href="index-authenticated.html">log in</a>
         </div>
+      </div>
       
-      <div class="span10">
-        <form action="#" method="POST" id="search_form">
+      <div class="row">
+        <form action="index-authorized.html" method="POST" id="search_form" class="form-search offset1 span9">
           <input type="text" name="keywords" class="span6" />
-          <input type="submit" value="search" class="btn" />
+          <button type="submit" class="btn">search</button>
         </form>
       </div>
       
-      <div class="span11">
+      <div class="row">
         <div id="left_column" class="offset1 span5">
           <h2>Welcome to Variations on Video</h2>
           <hr />
-          <form action="#" method="POST" class="form-horizontal">
+          <form action="index-authorized.html" method="POST" class="form-horizontal">
             <fieldset>
             <div class="control-group">
-              <label>username</label>
-              <input type="text" name="username" class="span4" />
+              <label class="control-label">username</label>
+              <div class="controls">
+                <input type="text" name="username" class="span3" />
+              </div>
             </div>
             <div class="control-group">
-              <label>password</label>
-              <input type="password" name="password" class="span4" />
+              <label class="control-label">password</label>
+              <div class="controls">
+                <input type="password" name="password" class="span3" />
+              </div>
             </div>
             <div class="control-group">
-              <input type="submit" value="log in" class="btn" />
+              <div class="controls">
+                <input type="submit" value="log in" class="btn" />
+              </div>
             </div>
             </fieldset>
           </form>
         </div>
         
-        <div id="right_column" class="span4">
-          <h2>Recently added</h2>
+        <div id="right_column" class="offset1 span3">
+          <h2>Recent activity</h2>
           <hr />
           <p><a href="#">Log in</a> to see a list of the most recent content added to the Variations on Video platform.</p>
         </div>
