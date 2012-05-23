@@ -8,8 +8,12 @@
   padding-left: 0;
 }
 
+/* Set the default status so that previous links are a darker color than the
+   currently active link */
 .wizard li {
-  background: rgb(225, 225, 225);
+  background: rgb(222, 225, 210);
+  color: rgb(144, 144, 144);
+
   padding: 5px 15px;
   margin-left: 0;
   
@@ -17,13 +21,24 @@
   border-radius: 5px;
 }
 
+/* Next brighten the active link and set it off in bold type */
 .wizard li.current {
-  color: rgb(255, 255, 255);
-  background: rgb(96, 96, 96);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  background: rgb(192, 217, 4);
 }
 
-.wizard li.previous {
+/* Finally use the spiffy ~ operator to pull in all of the previous li items. This
+   only works in modern browsers that support CSS3 so for fallback we still need to
+   provide a class as well 
+   
+   Some day this declaration will work though
+   
+   .wizard li.current ~ li,
+   */
+.wizard li.previous
+ {
   color: rgb(255, 255, 255);
-  background: rgb(0, 0, 0);
+  background: rgb(132, 166, 60);
 }
 
